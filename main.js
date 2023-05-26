@@ -66,7 +66,7 @@ function checkWin(player) {
   }
 }
 
-// Clear cells if winner or draw
+// Clear cells if win or draw
 function resetCells() {
   for (let i = 0; i > cells.length; i++) {
     cells[i].textContent = "";
