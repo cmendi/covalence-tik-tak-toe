@@ -3,11 +3,14 @@ let currentPlayer = "X";
 let winningPlayer = document.querySelector(".result");
 let gameOver = false;
 
+// Event listener to check for a click inside each cell
 for (let i = 0; i < cells.length; i++) {
   cells[i].addEventListener("click", cellClicked);
 }
 
+// Function for click event
 function cellClicked(event) {
+  // If the game is over cells reset
   if (gameOver) {
     resetCells();
     return;
@@ -20,6 +23,7 @@ function cellClicked(event) {
   }
 }
 
+// Function to check to see if either player won.
 function checkWin(player) {
   if (
     cells[0].textContent === player &&
@@ -80,7 +84,7 @@ function checkWin(player) {
   }
 }
 
-// Clear cells if win or draw
+// Function to clear cells if win or draw
 function resetCells() {
   for (let i = 0; i < cells.length; i++) {
     cells[i].textContent = "";
@@ -90,6 +94,7 @@ function resetCells() {
   currentPlayer = "X";
 }
 
+// Function to check if there was a draw or not.
 function checkDraw() {
   let isDraw = true;
   for (let i = 0; i < cells.length; i++) {
